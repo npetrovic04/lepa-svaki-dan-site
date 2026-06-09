@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Base ─────────────────────────────────── */
+  --color-white:        #FFFFFF;
+  --color-canvas:       #F5F3EF;   /* Skinia-inspired — cleaner neutral cream */
+  --color-card:         #EFEDE9;   /* slightly cooler than before */
+  --color-card-warm:    #F8F6F2;   /* off-white, clean */
+  --color-card-blush:   #F7F0ED;
+
+  /* ── Text ─────────────────────────────────── */
+  --color-ink:          #1A1A18;   /* neutral charcoal, not brownish */
+  --color-ink-soft:     #383835;
+  --color-mist:         #88837E;
+  --color-mist-light:   #B5AFAA;
+
+  /* ── Gold accent — the luxury signature ──── */
+  --color-champagne:    #B8924A;   /* deeper, richer gold — less yellow */
+  --color-champagne-glow: #CCA660;
+  --color-bronze:       #8B6B3D;
+  --color-parchment:    #E0CBA8;
+
+  /* ── Wellbeing accent (sage/botanical) ───── */
+  --color-sage:         #6B9080;
+  --color-sage-dim:     #A4C3B2;
+  --color-sage-soft:    #EAF2EE;
+
+  /* ── Dark panels ─────────────────────────── */
+  --color-onyx:         #111110;   /* near-black, like Skinia */
+  --color-onyx-soft:    #1A1A18;
+  --color-pearl:        #E8DBC5;
+  --color-pearl-dim:    #C5B89A;
+
+  --font-serif: var(--font-serif);
+  --font-sans:  var(--font-sans);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: #FFFFFF;
+  }
+  body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  ::selection {
+    background: var(--color-champagne);
+    color: var(--color-onyx);
+  }
+}
+
+/* ── Display font utility ─────────────────── */
+@utility font-display {
+  font-family: var(--font-serif), "Bodoni Moda", "Bodoni 72", Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+@utility font-display-italic {
+  font-family: var(--font-serif), "Bodoni Moda", "Bodoni 72", Georgia, serif;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* ── Section card wrapper ─────────────────── */
+@utility section-card {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* ── Champagne divider line ───────────────── */
+@utility champagne-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-champagne) 50%,
+    transparent 100%
+  );
+}
+
+/* ── Grain overlay ────────────────────────── */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.45 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}

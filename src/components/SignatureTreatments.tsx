@@ -18,9 +18,9 @@ export function SignatureTreatments() {
                 </div>
               </Reveal>
               <Reveal delay={0.07}>
-                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink">
+                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink">
                   Tretmani koji rade{" "}
-                  <span className="italic text-champagne">najviše posla</span>.
+                  <span className="font-display-italic text-champagne">najviše posla</span>.
                 </h2>
               </Reveal>
             </div>
@@ -60,7 +60,7 @@ export function SignatureTreatments() {
                       </div>
                       <LocationBadge location={t.location} />
                     </div>
-                    <h3 className="mt-2 font-display text-[2rem] font-normal text-ink leading-[1.1]">
+                    <h3 className="mt-2 font-display text-[2rem] font-semibold text-ink leading-[1.1]">
                       {t.title}
                     </h3>
                     <p className="mt-3 text-[14px] leading-[1.75] text-mist font-light flex-1">
@@ -82,7 +82,7 @@ export function SignatureTreatments() {
                       </div>
                       <div>
                         <div className="text-mist-light font-medium uppercase tracking-[0.16em] mb-1">Cena</div>
-                        <div className="font-display text-[1.2rem] font-normal text-champagne">{t.price}</div>
+                        <div className="font-display text-[1.2rem] font-semibold text-champagne">{t.price}</div>
                       </div>
                     </div>
                   </div>

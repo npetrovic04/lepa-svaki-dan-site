@@ -17,9 +17,9 @@ export function Concepts() {
             </Reveal>
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <Reveal delay={0.07}>
-                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink max-w-xl">
+                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink max-w-xl">
                   Šta je dostupno{" "}
-                  <span className="italic text-champagne">gde</span>.
+                  <span className="font-display-italic text-champagne">gde</span>.
                 </h2>
               </Reveal>
               <Reveal delay={0.12}>
@@ -61,7 +61,7 @@ export function Concepts() {
                           <span className={`size-1.5 rounded-full ${isWellbeing ? "bg-white/50" : "bg-onyx/30"}`} />
                           {c.concept}
                         </span>
-                        <div className="font-display text-[2.2rem] font-normal text-white leading-[1.05]">
+                        <div className="font-display text-[2.2rem] font-semibold text-white leading-[1.05]">
                           {c.name}
                         </div>
                         <div className="mt-1 text-[12px] text-pearl/65 font-light tracking-wide">

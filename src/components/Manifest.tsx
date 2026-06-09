@@ -17,11 +17,11 @@ export function Manifest() {
                 </div>
               </Reveal>
               <Reveal delay={0.07}>
-                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink">
+                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink">
                   Lepota nije{" "}
-                  <span className="italic text-champagne">trenutak</span>.{" "}
+                  <span className="font-display-italic text-champagne">trenutak</span>.{" "}
                   Lepota je{" "}
-                  <span className="italic text-champagne">ritual</span>{" "}
+                  <span className="font-display-italic text-champagne">ritual</span>{" "}
                   koji se gradi.
                 </h2>
               </Reveal>
@@ -41,7 +41,7 @@ export function Manifest() {
                 {stats.map((s, i) => (
                   <Reveal key={s.label} delay={0.08 * i}>
                     <div>
-                      <div className="font-display text-[3rem] font-normal text-champagne leading-none">
+                      <div className="font-display text-[3rem] font-semibold text-champagne leading-none">
                         {s.value}
                       </div>
                       <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.16em] text-mist leading-snug">
@@ -71,7 +71,7 @@ export function Manifest() {
                 <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-champagne">
                   Vodeći lekar
                 </div>
-                <div className="mt-2 font-display text-[1.6rem] font-normal text-ink">
+                <div className="mt-2 font-display text-[1.6rem] font-semibold text-ink">
                   Dr Tamara Vujačić
                 </div>
                 <div className="mt-1 text-[13px] text-mist font-light">

@@ -14,9 +14,9 @@ export function Process() {
                 </div>
               </Reveal>
               <Reveal delay={0.07}>
-                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink max-w-xl">
+                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink max-w-xl">
                   Četiri koraka.{" "}
-                  <span className="italic text-champagne">Bez improvizacije.</span>
+                  <span className="font-display-italic text-champagne">Bez improvizacije.</span>
                 </h2>
               </Reveal>
             </div>
@@ -32,10 +32,10 @@ export function Process() {
             {journey.map((j, i) => (
               <Reveal key={j.step} delay={0.09 * i}>
                 <div className="group rounded-2xl bg-white p-7 lg:p-8 transition-shadow hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
-                  <div className="font-display text-[4.5rem] font-normal leading-none text-black/6 transition-colors group-hover:text-champagne/20 select-none">
+                  <div className="font-display text-[4.5rem] font-semibold leading-none text-black/6 transition-colors group-hover:text-champagne/20 select-none">
                     {j.step}
                   </div>
-                  <h3 className="mt-4 font-display text-[1.5rem] font-normal text-ink">
+                  <h3 className="mt-4 font-display text-[1.5rem] font-semibold text-ink">
                     {j.title}
                   </h3>
                   <p className="mt-2.5 text-[14px] leading-[1.75] text-mist font-light">

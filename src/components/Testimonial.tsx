@@ -16,7 +16,7 @@ export function Testimonial() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <blockquote className="font-display text-balance text-[clamp(1.8rem,4vw,3.2rem)] font-normal leading-[1.25] text-ink">
+              <blockquote className="font-display text-balance text-[clamp(1.8rem,4vw,3.2rem)] font-semibold leading-[1.25] text-ink">
                 {testimonial.quote}
               </blockquote>
             </Reveal>

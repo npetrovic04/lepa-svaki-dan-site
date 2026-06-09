@@ -26,7 +26,7 @@ export function Hero() {
               Beauty & Wellbeing Concept · Beograd
             </div>
 
-            <h1 className="font-display text-[clamp(3.8rem,9.5vw,8.5rem)] font-normal leading-[0.9] tracking-[-0.02em] text-white">
+            <h1 className="font-display text-[clamp(3.8rem,9.5vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-white">
               Lepa{" "}
               <span className="font-display-italic text-champagne">svaki</span>
               <br />dan.

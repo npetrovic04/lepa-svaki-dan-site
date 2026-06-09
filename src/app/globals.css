@@ -56,15 +56,16 @@
 
 /* ── Display font utility ─────────────────── */
 @utility font-display {
-  font-family: var(--font-serif), "Bodoni Moda", "Bodoni 72", Georgia, serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-sans), system-ui, sans-serif;
   letter-spacing: -0.025em;
   line-height: 1.05;
 }
 
+/* Bodoni Moda — samo za italic akcente ("svaki", "trenutak", "ritual"...) */
 @utility font-display-italic {
   font-family: var(--font-serif), "Bodoni Moda", "Bodoni 72", Georgia, serif;
   font-style: italic;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }

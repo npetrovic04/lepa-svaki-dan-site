@@ -27,9 +27,9 @@ export function CtaBand() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h2 className="font-display text-balance text-[clamp(2.8rem,6vw,5.5rem)] font-normal leading-[1.05] text-white">
+              <h2 className="font-display text-balance text-[clamp(2.8rem,6vw,5.5rem)] font-semibold leading-[1.05] text-white">
                 Vaša koža zaslužuje{" "}
-                <span className="italic text-champagne">plan</span>,
+                <span className="font-display-italic text-champagne">plan</span>,
                 ne improvizaciju.
               </h2>
             </Reveal>

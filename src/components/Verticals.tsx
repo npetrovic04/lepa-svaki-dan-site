@@ -15,9 +15,9 @@ export function Verticals() {
               </div>
             </Reveal>
             <Reveal delay={0.07}>
-              <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink max-w-2xl">
+              <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink max-w-2xl">
                 Od prvog tretmana do{" "}
-                <span className="italic text-champagne">ozbiljne estetske medicine</span>.
+                <span className="font-display-italic text-champagne">ozbiljne estetske medicine</span>.
               </h2>
             </Reveal>
           </div>
@@ -47,7 +47,7 @@ export function Verticals() {
                       </div>
                       <LocationBadge location={v.location} variant="dark" />
                     </div>
-                    <h3 className="font-display text-[2rem] font-normal text-white leading-[1.1]">
+                    <h3 className="font-display text-[2rem] font-semibold text-white leading-[1.1]">
                       {v.title}
                     </h3>
                     <p className="mt-2 text-[13px] leading-[1.65] text-pearl/65 font-light max-w-xs">

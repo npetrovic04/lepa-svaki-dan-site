@@ -7,8 +7,8 @@ export function Footer() {
       <div className="section-card bg-onyx px-8 py-14 lg:px-16 lg:py-16 mx-auto max-w-[1400px]">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="font-display text-[2.4rem] font-normal text-white leading-[1.1]">
-              <span className="italic text-champagne">lepa</span> svaki dan
+            <div className="font-display text-[2.4rem] font-semibold text-white leading-[1.1]">
+              <span className="font-display-italic text-champagne">lepa</span> svaki dan
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-[1.75] text-pearl/45 font-light">
               Beauty & Wellbeing concept koji spaja modernu estetsku medicinu sa

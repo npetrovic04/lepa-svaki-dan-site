@@ -23,8 +23,8 @@ export function Nav() {
         }`}
       >
         {/* Logo */}
-        <a href="#" className="font-display text-[1.5rem] font-normal text-ink leading-none">
-          <span className="italic text-champagne">lepa</span>{" "}
+        <a href="#" className="font-display text-[1.5rem] font-semibold text-ink leading-none">
+          <span className="font-display-italic text-champagne">lepa</span>{" "}
           <span className="font-medium">svaki dan</span>
         </a>
 

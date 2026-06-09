@@ -14,9 +14,9 @@ export function Locations() {
               </div>
             </Reveal>
             <Reveal delay={0.07}>
-              <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.05] text-ink">
+              <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink">
                 Dve adrese u{" "}
-                <span className="italic text-champagne">Beogradu</span>.
+                <span className="font-display-italic text-champagne">Beogradu</span>.
               </h2>
             </Reveal>
           </div>
@@ -40,7 +40,7 @@ export function Locations() {
                     <div className="flex items-start justify-between gap-4 mb-5">
                       <div>
                         <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-champagne mb-1">{loc.concept}</div>
-                        <h3 className="font-display text-[2rem] font-normal text-ink leading-[1.1]">{loc.name}</h3>
+                        <h3 className="font-display text-[2rem] font-semibold text-ink leading-[1.1]">{loc.name}</h3>
                         <p className="mt-1 text-[13px] text-mist font-light">{loc.address}</p>
                       </div>
                     </div>

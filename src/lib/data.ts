@@ -1,31 +1,53 @@
-// Stock fotografije sa Unsplash CDN. Zamenuti AI-generated ili pravim
-// snimcima klinike kad bude dostupno.
-function img(id: string, w = 1920) {
-  return `https://images.unsplash.com/photo-${id}?w=${w}&q=85&auto=format&fit=crop`;
-}
-
+// Lumiera slike preuzete sa framerusercontent.com CDN — lokalne kopije u /public/lumiera-assets/
+// Logo preuzet sa lepasvakidan.rs
 export const images = {
-  hero: img("1600334089648-b0d9d3028eb2"),
-  ctaBg: img("1515377905703-c4788e51af15"),
-  portraitDr: img("1644289172092-2de79b425d6f", 1200),
-  treatmentProfhilo: img("1570172619644-dfd03ed5d881", 1200),
-  treatmentVenus: img("1696841212541-449ca29397cc", 1200),
-  treatmentDermapen: img("1487412947147-5cebf100ffc2", 1200),
-  treatmentFillers: img("1620733723572-11c53f73a416", 1200),
-  verticalFace: img("1576426863848-c21f53c60b19", 1400),
-  verticalBody: img("1556228720-195a672e8a03", 1400),
-  verticalEsthetic: img("1622618991746-fe6004db3a47", 1400),
-  verticalLaser: img("1555820585-c5ae44394b79", 1400),
-  verticalProtocols: img("1544843776-7c98a52e08a4", 1400),
-  locationNoviBeograd: img("1544161515-4ab6ce6db874", 1400),
-  locationWaterfront: img("1639162906614-0603b0ae95fd", 1400),
+  // Hero slike (2000×1333 — portrait/atmosphere)
+  hero: "/lumiera-assets/hero1.png",
+  hero2: "/lumiera-assets/hero2.png",
+  hero3: "/lumiera-assets/hero3.jpg",
+
+  // CTA banda — tamna atmosferska fotografija
+  ctaBg: "/lumiera-assets/cta-bg.png",
+
+  // Portret (2000px visina) — za Manifest sekciju
+  portraitDr: "/lumiera-assets/portrait.png",
+
+  // Tretmani — horizontalni carousel
+  treatmentProfhilo:  "/lumiera-assets/UERW22sh1kIYLi7iLSLwZnqeI.jpg",
+  treatmentVenus:     "/lumiera-assets/FUuEVpCZfxYHuVoaO9hjkXCU.jpg",
+  treatmentDermapen:  "/lumiera-assets/Ta7t8pysLYXQc3he12H4MyZJTvc.jpg",
+  treatmentFillers:   "/lumiera-assets/pe83T6PELURtsEzQGkeaYxCs.jpg",
+  treatmentExtra1:    "/lumiera-assets/IaX7ZXWdw5qPYtkJS8Sq1Sc6rnI.jpg",
+  treatmentExtra2:    "/lumiera-assets/OqFkZuVHVnp4ArqA4V16epS8rI.jpg",
+  treatmentExtra3:    "/lumiera-assets/6A4hwz0YtJyXUrK6Q18S0t4sHU.jpg",
+
+  // Vertikale usluga
+  verticalFace:      "/lumiera-assets/bagflKECl0OlKPITxBmh1mKh28.jpg",
+  verticalBody:      "/lumiera-assets/mEmiU48keF7dcTjtamv05pvaQw.jpg",
+  verticalEsthetic:  "/lumiera-assets/u9FefZpSEACCgSMmzhjeEIuqCyM.jpg",
+  verticalLaser:     "/lumiera-assets/Sy4d00VTr7VlVZUArsPX7X5UZHo.jpg",
+  verticalProtocols: "/lumiera-assets/KRIrBpbu1a5iQAOj429U6Y09Ij8.jpg",
+
+  // Lokacije
+  locationNoviBeograd: "/lumiera-assets/NwD75Uua7WKDmBcDGC6jVH3tpQ.jpg",
+  locationWaterfront:  "/lumiera-assets/Ai3t6jdxsPY5sVHfSYRFtfzuY.jpg",
+
+  // Filozofija / about
+  about: "/lumiera-assets/lSGem8njRX7qxj97u0MdoumZY.jpg",
+  aboutRight: "/lumiera-assets/about-right.png",
+
+  // Testimonial — landscape (2000×919)
+  testimonial: "/lumiera-assets/FwuhHYOXRwVLdFxvgCh33culsjI.jpg",
+
+  // Dekorativni SVG elementi
+  flowerLarge: "/lumiera-assets/flower-large.svg",
 };
 
 export const brand = {
   name: "Lepa Svaki Dan",
   tagline: "Beauty & Wellbeing Concept",
   manifest:
-    "Spajamo savremenu estetsku medicinu sa starim ritualom nege. Bez žurbe, bez šablona — samo plan koji odgovara vašoj koži i vašem ritmu.",
+    "Oaza lepote i uživanja na mestu koje spaja moderne aparaturne tretmane i estetske procedure sa klasičnom negom — u cilju očuvanja vaše lepote.",
   phonePrimary: "+381 64 8239 439",
   phoneWaterfront: "+381 66 177 117",
   email: "office@lepasvakidan.rs",
@@ -48,23 +70,23 @@ export const navLinks = [
 
 export const signatureTreatments = [
   {
-    eyebrow: "Bioremodelacija",
-    title: "Profhilo",
+    eyebrow: "Protokol · Glow & Go",
+    title: "Glow & Go",
     description:
-      "Hijaluronski bioremodulator koji vraća čvrstinu i sjaj koži bez efekta filera. Rezultat se gradi tokom šest nedelja.",
-    result: "Vidljiva tonusna podloga lica i vrata, prirodno blistavilo.",
-    sessions: "2 tretmana",
-    duration: "30 minuta",
-    price: "300 €",
+      "Brzi protokol sjaja koji kombinuje dubinsko čišćenje, Venus Glow i biorevitalizaciju — savršen pre važnog događaja.",
+    result: "Blistava, hidrirana koža odmah po tretmanu.",
+    sessions: "1 tretman",
+    duration: "75 minuta",
+    price: "po dogovoru",
     image: images.treatmentProfhilo,
     location: "beauty" as const,
   },
   {
-    eyebrow: "Radiofrekvencija + RF magnet",
+    eyebrow: "Aparaturni tretman tela",
     title: "Venus Legacy",
     description:
       "Neinvazivno zatezanje i remodelacija — kombinacija RF energije i pulsnih magnetnih polja koja podstiče sopstveni kolagen.",
-    result: "Zategnutiji oval lica i konture tela bez perioda oporavka.",
+    result: "Zategnutije, glatkije telo bez perioda oporavka.",
     sessions: "6 tretmana",
     duration: "45 minuta",
     price: "od 80 €",
@@ -72,29 +94,28 @@ export const signatureTreatments = [
     location: "both" as const,
   },
   {
-    eyebrow: "Mikroubodi za kolagen",
-    title: "Dermapen + PRX",
+    eyebrow: "Mikroubodi za obnovu kože",
+    title: "Dermapen",
     description:
-      "Kontrolisana mikrostimulacija u kombinaciji sa biorevitalizujućim pilingom — najbrži put do glatkije teksture i jednoličnog tona.",
-    result: "Suzene pore, smanjeni ožiljci od akni, ravnomerna koža.",
+      "Kontrolisana mikrostimulacija kože koja pokreće prirodnu obnovu kolagena — vidljivo glatkija tekstura i ujednačen ton.",
+    result: "Suzene pore, smanjeni tragovi od akni, sjajna koža.",
     sessions: "4 tretmana",
     duration: "60 minuta",
-    price: "107 €",
+    price: "po dogovoru",
     image: images.treatmentDermapen,
     location: "beauty" as const,
   },
   {
-    eyebrow: "Estetska medicina",
-    title: "Whole Face Approach",
+    eyebrow: "Laserska epilacija",
+    title: "Laserska epilacija",
     description:
-      "Pregled, plan i kombinacija botoksa, hijaluronskih filera i biostimulatora — vođeno principom diskretnog rezultata.",
-    result:
-      "Odmoran, prirodan izraz lica — prepoznajete sebe, ali bolju verziju.",
-    sessions: "3+1 paket",
-    duration: "60 minuta",
-    price: "850 €",
+      "Venus Velocity diodni laser — najsavremenija tehnologija za trajno uklanjanje dlačica na svim tipovima kože.",
+    result: "Trajna redukcija dlačica već posle prvog tretmana.",
+    sessions: "paket 6+1",
+    duration: "od 20 minuta",
+    price: "od 16 €",
     image: images.treatmentFillers,
-    location: "beauty" as const,
+    location: "wellbeing" as const,
   },
 ];
 
@@ -212,12 +233,32 @@ export const journey = [
   },
 ];
 
-export const testimonial = {
-  quote:
-    "Posle prvog laser tretmana mogla sam slobodno da kažem — pogled u ogledalo se promenio. Niko ne zna šta sam uradila, a svi primete da nešto sija.",
-  attribution: "M. P.",
-  context: "Klijent · Glow&Go protokol",
-};
+export const testimonials = [
+  {
+    quote:
+      "Samo da javnem, da posle prvog laser tretmana za uklanjanje dlačica, rezultat je šokantan.",
+    attribution: "Nada",
+    context: "Laserska epilacija",
+    emoji: "😍",
+  },
+  {
+    quote:
+      "Samo da javim, da ste ulepšali dan jednoj mami. Posle vašeg tretmana osećam se fenomenalno. Veliki pozdrav za sve.",
+    attribution: "Tea",
+    context: "New mum recharge protokol",
+    emoji: "❤️",
+  },
+  {
+    quote:
+      "Već posle 2. Legacy tretmana vidim razliku u izgledu nogu. Jedva čekam ostale!",
+    attribution: "Jelena",
+    context: "Venus Legacy · Kick start diet",
+    emoji: "🥰",
+  },
+];
+
+// backwards compat
+export const testimonial = testimonials[0];
 
 export const locations = [
   {

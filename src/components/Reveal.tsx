@@ -6,28 +6,24 @@ import type { ReactNode } from "react";
 export function Reveal({
   children,
   delay = 0,
-  y = 24,
   className,
 }: {
   children: ReactNode;
   delay?: number;
-  y?: number;
   className?: string;
 }) {
   const prefersReducedMotion = useReducedMotion();
-  const shouldReduceMotion = prefersReducedMotion ?? false;
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y }}
-      whileInView={
-        shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
-      }
-      viewport={{ once: true, margin: "-80px" }}
+      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 40 }}
+      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
       transition={{
-        duration: 0.9,
+        type: "spring",
+        bounce: 0.1,
+        duration: 0.7,
         delay,
-        ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
     >

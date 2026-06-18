@@ -3,9 +3,9 @@
 @theme {
   /* ── Base ─────────────────────────────────── */
   --color-white:        #FFFFFF;
-  --color-canvas:       #F5F3EF;   /* Skinia-inspired — cleaner neutral cream */
-  --color-card:         #EFEDE9;   /* slightly cooler than before */
-  --color-card-warm:    #F8F6F2;   /* off-white, clean */
+  --color-canvas:       #FAF7F6;   /* Lumiera exact cream */
+  --color-card:         #F7F3EF;   /* Lumiera lighter cream sections */
+  --color-card-warm:    #FAF7F6;   /* matches canvas */
   --color-card-blush:   #F7F0ED;
 
   /* ── Text ─────────────────────────────────── */
@@ -14,22 +14,45 @@
   --color-mist:         #88837E;
   --color-mist-light:   #B5AFAA;
 
-  /* ── Gold accent — the luxury signature ──── */
-  --color-champagne:    #B8924A;   /* deeper, richer gold — less yellow */
-  --color-champagne-glow: #CCA660;
+  /* ── Lila — njen brend akcenat ─────────── */
+  --color-lila:         #9471D3;
+  --color-lila-glow:    #A887E0;
+  --color-lila-soft:    #D9CBEC;
+  --color-lavanda:      #C5B4E3;
+  --color-lavanda-dim:  #B4A3D8;
+
+  /* ── Gold — luksuz sekundarni akcenat ───── */
+  --color-champagne:    #CB9D39;
+  --color-champagne-glow: #DDB045;
   --color-bronze:       #8B6B3D;
   --color-parchment:    #E0CBA8;
 
-  /* ── Wellbeing accent (sage/botanical) ───── */
+  /* ── Sage — botanički (zadržan za lokacije) */
   --color-sage:         #6B9080;
   --color-sage-dim:     #A4C3B2;
   --color-sage-soft:    #EAF2EE;
 
+  /* ── Nude — beauty topli akcenat ─────────── */
+  --color-nude:         #DDB8A8;
+  --color-nude-glow:    #E8C4B8;
+  --color-nude-soft:    #F3E3DC;
+  --color-nude-text:    #8A5C4C;
+
   /* ── Dark panels ─────────────────────────── */
-  --color-onyx:         #111110;   /* near-black, like Skinia */
-  --color-onyx-soft:    #1A1A18;
+  --color-onyx:         #333333;   /* Lumiera dark panel bg */
+  --color-onyx-soft:    #1A1A1A;  /* Lumiera near-black text */
   --color-pearl:        #E8DBC5;
   --color-pearl-dim:    #C5B89A;
+
+  /* ── Lokacijske boje (A+B sistem) ─────────── */
+  --color-nb:           #3F6E5E;   /* Novi Beograd — zelena */
+  --color-bw:           #5B6F94;   /* Belgrade Waterfront — plava */
+  --color-nb-soft:      #E1ECE6;   /* NB pill pozadina */
+  --color-bw-soft:      #E2E8F1;   /* BWF pill pozadina */
+  --color-nb-text:      #264A3D;   /* NB pill tekst */
+  --color-bw-text:      #37466A;   /* BWF pill tekst */
+  --color-both-soft:    #F2EEE6;   /* Both pill pozadina */
+  --color-both-text:    #5A4928;   /* Both pill tekst */
 
   --font-serif: var(--font-serif);
   --font-sans:  var(--font-sans);
@@ -54,24 +77,31 @@
   }
 }
 
-/* ── Display font utility ─────────────────── */
+/* ── Display font utility — Playfair Display ──────────────────── */
 @utility font-display {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-/* Bodoni Moda — samo za italic akcente ("svaki", "trenutak", "ritual"...) */
+/* Playfair Italic — za akcente ("lepa", "svaki", "ritual"...) */
 @utility font-display-italic {
-  font-family: var(--font-serif), "Bodoni Moda", "Bodoni 72", Georgia, serif;
+  font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { display: none; }
 }
 
 @utility text-pretty {

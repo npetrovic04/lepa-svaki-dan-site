@@ -1,25 +1,26 @@
 import Image from "next/image";
 import { concepts, sharedServices } from "@/lib/data";
 import { Reveal } from "@/components/Reveal";
+import { TiltCard } from "@/components/TiltCard";
 
 export function Concepts() {
   return (
-    <section id="koncepti" className="px-3 py-3 lg:px-4">
-      <div className="section-card bg-card-warm mx-auto max-w-[1400px]">
-        <div className="px-8 py-16 lg:px-16 lg:py-24">
+    <section id="koncepti" className="bg-[#F5F1EC] py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div>
 
           {/* Header */}
           <div className="mb-14">
             <Reveal>
-              <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.35em] text-champagne">
+              <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.35em] text-lila">
                 Dva koncepta · Jedna filozofija
               </div>
             </Reveal>
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <Reveal delay={0.07}>
-                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-semibold leading-[1.05] text-ink max-w-xl">
+                <h2 className="font-display text-balance text-[clamp(2.8rem,5.5vw,5.2rem)] font-normal leading-[1.23] text-ink max-w-xl">
                   Šta je dostupno{" "}
-                  <span className="font-display-italic text-champagne">gde</span>.
+                  <span className="font-display-italic text-lila">gde</span>.
                 </h2>
               </Reveal>
               <Reveal delay={0.12}>
@@ -37,7 +38,7 @@ export function Concepts() {
               const isWellbeing = c.slug === "wellbeing";
               return (
                 <Reveal key={c.slug} delay={0.08 * i}>
-                  <article className="group flex flex-col overflow-hidden rounded-2xl bg-white">
+                  <TiltCard className="group flex flex-col overflow-hidden rounded-2xl bg-white">
 
                     {/* Image with concept label overlaid */}
                     <div className="relative aspect-[16/9] overflow-hidden">
@@ -54,14 +55,14 @@ export function Concepts() {
                         <span
                           className={`inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] mb-3 ${
                             isWellbeing
-                              ? "bg-sage text-white"
-                              : "bg-champagne text-onyx"
+                              ? "bg-lavanda text-white"
+                              : "bg-lila text-onyx"
                           }`}
                         >
                           <span className={`size-1.5 rounded-full ${isWellbeing ? "bg-white/50" : "bg-onyx/30"}`} />
                           {c.concept}
                         </span>
-                        <div className="font-display text-[2.2rem] font-semibold text-white leading-[1.05]">
+                        <div className="font-display text-[2.2rem] font-normal text-white leading-[1.3]">
                           {c.name}
                         </div>
                         <div className="mt-1 text-[12px] text-pearl/65 font-light tracking-wide">
@@ -78,13 +79,13 @@ export function Concepts() {
 
                       {/* Services exclusive to this location */}
                       <div className="mt-7">
-                        <div className={`mb-4 text-[10px] font-semibold uppercase tracking-[0.3em] ${isWellbeing ? "text-sage" : "text-champagne"}`}>
+                        <div className={`mb-4 text-[10px] font-semibold uppercase tracking-[0.3em] ${isWellbeing ? "text-lavanda" : "text-lila"}`}>
                           Dostupno isključivo ovde
                         </div>
                         <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                           {c.services.map((s) => (
                             <li key={s} className="flex items-start gap-2 text-[13px] font-light text-ink-soft leading-snug">
-                              <span className={`mt-[5px] size-1.5 rounded-full flex-shrink-0 ${isWellbeing ? "bg-sage" : "bg-champagne"}`} />
+                              <span className={`mt-[5px] size-1.5 rounded-full flex-shrink-0 ${isWellbeing ? "bg-lavanda" : "bg-lila"}`} />
                               {s}
                             </li>
                           ))}
@@ -96,7 +97,7 @@ export function Concepts() {
                         <a
                           href={`tel:${c.phone.replace(/\s/g, "")}`}
                           className={`flex-1 text-center rounded-full px-5 py-3 text-[12px] font-medium text-white transition-all ${
-                            isWellbeing ? "bg-sage hover:bg-sage/80" : "bg-ink hover:bg-ink-soft"
+                            isWellbeing ? "bg-lavanda hover:bg-lila" : "bg-ink hover:bg-ink-soft"
                           }`}
                         >
                           {c.phone}
@@ -105,13 +106,13 @@ export function Concepts() {
                           href={c.map}
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded-full border border-black/12 px-5 py-3 text-[12px] font-medium text-ink-soft transition-colors hover:text-champagne hover:border-champagne/50"
+                          className="rounded-full border border-black/12 px-5 py-3 text-[12px] font-medium text-ink-soft transition-colors hover:text-lila hover:border-lila/50"
                         >
                           Mapa →
                         </a>
                       </div>
                     </div>
-                  </article>
+                  </TiltCard>
                 </Reveal>
               );
             })}
@@ -126,8 +127,8 @@ export function Concepts() {
                     Na obe lokacije
                   </div>
                   <div className="flex items-center gap-1">
-                    <span className="size-2 rounded-full bg-champagne" />
-                    <span className="size-2 rounded-full bg-sage" />
+                    <span className="size-2 rounded-full bg-lila" />
+                    <span className="size-2 rounded-full bg-lavanda" />
                   </div>
                 </div>
                 <div className="h-px w-full bg-black/6 sm:h-8 sm:w-px sm:flex-shrink-0" />
@@ -150,3 +151,4 @@ export function Concepts() {
     </section>
   );
 }
+

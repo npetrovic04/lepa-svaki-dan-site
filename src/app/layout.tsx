@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Inter } from "next/font/google";
+import { Playfair_Display, Outfit } from "next/font/google";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
-// Bodoni Moda — font Vogue, Chanel, Charlotte Tilbury. World-class luxury serif.
-const bodoniModa = Bodoni_Moda({
+const playfair = Playfair_Display({
   variable: "--font-serif",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
 
-// Inter — clean medical precision, same as top-tier clinical brands
-const inter = Inter({
+const outfit = Outfit({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
   display: "swap",
@@ -41,10 +40,17 @@ export default function RootLayout({
   return (
     <html
       lang="sr"
-      className={`${bodoniModa.variable} ${inter.variable} h-full antialiased`}
+      className={`${playfair.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-ink">
+      <body className="min-h-full flex flex-col bg-white text-ink overflow-x-hidden">
+        <ScrollProgress />
         {children}
+        {/* Bottom scroll blur — fixed viewport edge fade */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed bottom-0 inset-x-0 z-40 h-16"
+          style={{ background: "linear-gradient(to top, rgba(255,255,255,0.72) 0%, transparent 100%)" }}
+        />
       </body>
     </html>
   );

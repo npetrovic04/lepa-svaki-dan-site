@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Playfair_Display, Mrs_Saint_Delafield, Outfit } from "next/font/google";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
@@ -9,6 +9,13 @@ const playfair = Playfair_Display({
   display: "swap",
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
+});
+
+const script = Mrs_Saint_Delafield({
+  variable: "--font-script",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
 });
 
 const outfit = Outfit({
@@ -40,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="sr"
-      className={`${playfair.variable} ${outfit.variable} h-full antialiased`}
+      className={`${playfair.variable} ${script.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink overflow-x-hidden">
         <ScrollProgress />

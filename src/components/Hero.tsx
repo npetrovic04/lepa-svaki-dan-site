@@ -62,14 +62,14 @@ export function Hero() {
         {/* Headline — kinetic letter-by-letter reveal, forced two lines */}
         <h1 className="font-display text-[clamp(3.2rem,6.5vw,7rem)] font-normal text-ink leading-[1.2] whitespace-nowrap">
           <div className="block">
-            <KineticText text="Budi lepa," by="letter" delay={0.25} stagger={0.025} />
+            <KineticText text="Budi lepa," by="letter" delay={0.3} stagger={0.06} />
           </div>
           <div className="block">
             <KineticText
               text="Svaki dan"
               by="letter"
-              delay={0.55}
-              stagger={0.025}
+              delay={1.1}
+              stagger={0.06}
               className="font-display-italic text-lila"
             />
           </div>

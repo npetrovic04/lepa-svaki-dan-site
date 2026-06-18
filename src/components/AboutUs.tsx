@@ -31,9 +31,9 @@ export function AboutUs() {
               </div>
             </Reveal>
             <h2 className="font-display text-balance text-[clamp(2.6rem,5vw,4.4rem)] font-normal leading-[1.25] text-ink">
-              <KineticText text="Lepota nije" by="word" stagger={0.06} />{" "}
-              <KineticText text="trenutak," by="word" stagger={0.06} delay={0.12} className="font-display-italic text-lila" />{" "}
-              <KineticText text="već navika." by="word" stagger={0.06} delay={0.2} />
+              <KineticText text="Lepota nije" by="word" />{" "}
+              <KineticText text="trenutak," by="word" delay={0.25} className="font-display-italic text-lila" />{" "}
+              <KineticText text="već navika." by="word" delay={0.45} />
             </h2>
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-xl text-[15px] leading-[1.9] text-mist font-light">

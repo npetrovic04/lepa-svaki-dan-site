@@ -16,13 +16,13 @@ export function Reveal({
 
   return (
     <motion.div
-      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 40 }}
-      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 52, filter: "blur(4px)" }}
+      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{
         type: "spring",
-        bounce: 0.1,
-        duration: 0.7,
+        bounce: 0.08,
+        duration: 1.1,
         delay,
       }}
       className={className}

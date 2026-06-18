@@ -16,8 +16,38 @@ const SPANS = [
 
 export function Verticals() {
   return (
-    <section className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-white py-20 lg:py-28">
+      {/* Delicate botanical line-art accents */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 200 200"
+        className="pointer-events-none absolute -left-16 -top-10 h-[300px] w-[300px] text-lila/[0.07] lg:h-[400px] lg:w-[400px]"
+        fill="none"
+      >
+        <path
+          d="M100 20c10 20 30 25 40 45s-5 45-40 55c-35-10-50-35-40-55s30-25 40-45Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path d="M100 70v90M70 100h60M80 130h40" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="100" cy="70" r="8" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 200 200"
+        className="pointer-events-none absolute -right-20 bottom-10 h-[280px] w-[280px] text-nude-text/[0.08] lg:h-[360px] lg:w-[360px] rotate-[160deg]"
+        fill="none"
+      >
+        <path
+          d="M100 20c10 20 30 25 40 45s-5 45-40 55c-35-10-50-35-40-55s30-25 40-45Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path d="M100 70v90M70 100h60M80 130h40" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="100" cy="70" r="8" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         <div>
           <div className="mb-14">
             <Reveal>

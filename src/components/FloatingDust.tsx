@@ -10,7 +10,7 @@ type Speck = {
   duration: number;
   delay: number;
   opacity: number;
-  hue: number;   // gold / lila / pink
+  hue: number;
   driftAmp: number;
 };
 
@@ -19,12 +19,12 @@ function makeSpeck(id: number): Speck {
   return {
     id,
     x: Math.random() * 100,
-    size: 1 + Math.random() * 3,
-    duration: 14 + Math.random() * 16,
+    size: 3 + Math.random() * 7,   // 3-10 px (much bigger than before)
+    duration: 12 + Math.random() * 14,
     delay: -Math.random() * 20,
-    opacity: 0.4 + Math.random() * 0.5,
+    opacity: 0.5 + Math.random() * 0.45,
     hue: palette[Math.floor(Math.random() * palette.length)],
-    driftAmp: 8 + Math.random() * 14,
+    driftAmp: 14 + Math.random() * 24,
   };
 }
 
@@ -49,14 +49,14 @@ export function FloatingDust({ count = 40 }: { count?: number }) {
             top: "110%",
             width: s.size,
             height: s.size,
-            background: `hsl(${s.hue}, 70%, 75%)`,
-            boxShadow: `0 0 ${s.size * 2}px hsl(${s.hue}, 75%, 70%)`,
+            background: `radial-gradient(circle, hsl(${s.hue}, 80%, 78%) 0%, hsl(${s.hue}, 75%, 65%) 60%, transparent 100%)`,
+            boxShadow: `0 0 ${s.size * 4}px hsl(${s.hue}, 80%, 70%), 0 0 ${s.size * 8}px hsla(${s.hue}, 75%, 65%, 0.5)`,
             opacity: s.opacity,
             willChange: "transform",
           }}
           initial={{ y: 0, x: 0 }}
           animate={{
-            y: ["0%", "-120vh"],
+            y: ["0%", "-130vh"],
             x: [`0px`, `${s.driftAmp}px`, `-${s.driftAmp * 0.7}px`, `${s.driftAmp * 0.4}px`, `0px`],
           }}
           transition={{

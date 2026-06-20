@@ -18,20 +18,20 @@ const SPANS = [
 export function Verticals() {
   return (
     <section className="relative isolate overflow-hidden bg-canvas py-20 lg:py-28">
-      {/* Layered beauty background: orchid photo flipped for variation */}
-      <div className="pointer-events-none absolute inset-0">
-        <Image
-          src="/hero-orhideja.png"
-          alt=""
-          fill
-          className="object-cover opacity-[0.22] scale-x-[-1]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas/70 to-canvas/90" />
+      {/* Orchid bouquet — visible right edge */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[8%] top-0 h-full w-[50vw] max-w-[680px] scale-x-[-1]">
+        <div className="relative h-full w-full">
+          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="50vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
+          <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
+        </div>
       </div>
 
-      {/* Floating gold/lila dust particles */}
-      <FloatingDust count={28} />
+      {/* Soft center wash */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_50%,rgba(250,247,246,0.88)_30%,transparent_100%)]" />
+
+      {/* Large floating dust particles */}
+      <FloatingDust count={35} />
 
       {/* Delicate botanical line-art accents */}
       <svg

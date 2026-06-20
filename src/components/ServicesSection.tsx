@@ -6,21 +6,29 @@ import { FloatingDust } from "@/components/FloatingDust";
 export function ServicesSection() {
   return (
     <section id="usluge" className="relative isolate overflow-hidden bg-canvas py-20 lg:py-28">
-      {/* Decorative orchid bouquets — anchored to corners, clearly visible */}
-      <div className="pointer-events-none absolute -top-20 -left-32 w-[55vw] max-w-[680px] aspect-[16/9] opacity-70">
-        <Image src="/hero-orhideja.png" alt="" fill className="object-cover" sizes="60vw" />
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-canvas/50 to-canvas" />
-      </div>
-      <div className="pointer-events-none absolute -bottom-24 -right-32 w-[50vw] max-w-[620px] aspect-[16/9] opacity-60 scale-x-[-1]">
-        <Image src="/hero-orhideja.png" alt="" fill className="object-cover" sizes="55vw" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-canvas/50 to-canvas" />
+      {/* Large orchid bouquet — visible left edge */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-[10%] top-0 h-full w-[55vw] max-w-[760px]">
+        <div className="relative h-full w-full">
+          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="55vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
+          <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
+        </div>
       </div>
 
-      {/* Soft radial wash to keep center reading area clean */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_50%,rgba(250,247,246,0.85)_30%,transparent_100%)]" />
+      {/* Mirror orchid — visible right edge */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-[10%] bottom-0 h-full w-[45vw] max-w-[640px] scale-x-[-1]">
+        <div className="relative h-full w-full">
+          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="45vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
+          <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
+        </div>
+      </div>
 
-      {/* Floating gold/lila dust particles */}
-      <FloatingDust count={50} />
+      {/* Soft center wash so the reading column stays calm */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_50%,rgba(250,247,246,0.92)_25%,transparent_100%)]" />
+
+      {/* Large floating dust particles */}
+      <FloatingDust count={45} />
 
       <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
         <div className="mb-14">

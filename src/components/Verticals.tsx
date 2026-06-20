@@ -3,6 +3,7 @@ import { verticals } from "@/lib/data";
 import { Reveal } from "@/components/Reveal";
 import { LocationBadge } from "@/components/LocationBadge";
 import { TiltCard } from "@/components/TiltCard";
+import { FloatingDust } from "@/components/FloatingDust";
 
 // Bento spans — index0 is the big featured card, auto-placement fills the
 // rest without gaps (verified: 2x2 + 1x1 + 1x1 + 1x1 + 2x1 = perfect grid).
@@ -16,7 +17,22 @@ const SPANS = [
 
 export function Verticals() {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-20 lg:py-28">
+    <section className="relative isolate overflow-hidden bg-canvas py-20 lg:py-28">
+      {/* Layered beauty background: orchid photo flipped for variation */}
+      <div className="pointer-events-none absolute inset-0">
+        <Image
+          src="/hero-orhideja.png"
+          alt=""
+          fill
+          className="object-cover opacity-[0.22] scale-x-[-1]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas/70 to-canvas/90" />
+      </div>
+
+      {/* Floating gold/lila dust particles */}
+      <FloatingDust count={28} />
+
       {/* Delicate botanical line-art accents */}
       <svg
         aria-hidden="true"

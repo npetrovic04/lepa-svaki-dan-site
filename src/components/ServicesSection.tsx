@@ -1,22 +1,26 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { CenovnikClient } from "@/components/cenovnik/CenovnikClient";
+import { FloatingDust } from "@/components/FloatingDust";
 
 export function ServicesSection() {
   return (
     <section id="usluge" className="relative isolate overflow-hidden bg-canvas py-20 lg:py-28">
-      {/* Soft beauty background photo — orchid, faded into canvas color */}
+      {/* Layered beauty background: orchid photo + ambient lila/gold wash */}
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/hero-orhideja.png"
           alt=""
           fill
-          className="object-cover opacity-[0.16]"
+          className="object-cover opacity-[0.32]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas via-canvas/85 to-canvas" />
-        <div className="absolute inset-0 bg-gradient-to-r from-canvas via-transparent to-canvas" />
+        <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-canvas/55 to-canvas/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_50%,transparent_0%,rgba(250,247,246,0.7)_100%)]" />
       </div>
+
+      {/* Floating gold/lila dust particles drifting upward */}
+      <FloatingDust count={36} />
 
       {/* Delicate botanical line-art accents */}
       <svg

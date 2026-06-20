@@ -122,8 +122,15 @@ export function PricingPanel({ activeTab, activeFilter }: Props) {
                       className="overflow-hidden border-t border-black/[0.06]"
                     >
                       {group.services.map((svc, i) => (
-                        <div
+                        <motion.div
                           key={i}
+                          initial={{ opacity: 0, x: -16 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.45,
+                            ease: [0.25, 1, 0.5, 1],
+                            delay: i * 0.05,
+                          }}
                           className={
                             i < group.services.length - 1
                               ? "border-b border-black/[0.05]"
@@ -131,7 +138,7 @@ export function PricingPanel({ activeTab, activeFilter }: Props) {
                           }
                         >
                           <ServiceRow service={svc} />
-                        </div>
+                        </motion.div>
                       ))}
                     </motion.div>
                   )}

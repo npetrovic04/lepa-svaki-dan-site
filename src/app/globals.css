@@ -124,6 +124,23 @@
   );
 }
 
+/* ── Price gold-shimmer (sweeps on .group:hover) ──────────── */
+.price-shimmer {
+  background-image: linear-gradient(110deg,
+    #1a1a18 0%, #1a1a18 38%,
+    #cb9d39 50%,
+    #1a1a18 62%, #1a1a18 100%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 900ms ease;
+}
+.group:hover .price-shimmer {
+  background-position: 0% 0;
+}
+
 /* ── Grain overlay ────────────────────────── */
 .grain {
   position: relative;

@@ -6,51 +6,21 @@ import { FloatingDust } from "@/components/FloatingDust";
 export function ServicesSection() {
   return (
     <section id="usluge" className="relative isolate overflow-hidden bg-canvas py-20 lg:py-28">
-      {/* Layered beauty background: orchid photo + ambient lila/gold wash */}
-      <div className="pointer-events-none absolute inset-0">
-        <Image
-          src="/hero-orhideja.png"
-          alt=""
-          fill
-          className="object-cover opacity-[0.32]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-canvas/55 to-canvas/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_50%,transparent_0%,rgba(250,247,246,0.7)_100%)]" />
+      {/* Decorative orchid bouquets — anchored to corners, clearly visible */}
+      <div className="pointer-events-none absolute -top-20 -left-32 w-[55vw] max-w-[680px] aspect-[16/9] opacity-70">
+        <Image src="/hero-orhideja.png" alt="" fill className="object-cover" sizes="60vw" />
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-canvas/50 to-canvas" />
+      </div>
+      <div className="pointer-events-none absolute -bottom-24 -right-32 w-[50vw] max-w-[620px] aspect-[16/9] opacity-60 scale-x-[-1]">
+        <Image src="/hero-orhideja.png" alt="" fill className="object-cover" sizes="55vw" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-canvas/50 to-canvas" />
       </div>
 
-      {/* Floating gold/lila dust particles drifting upward */}
-      <FloatingDust count={36} />
+      {/* Soft radial wash to keep center reading area clean */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_50%,rgba(250,247,246,0.85)_30%,transparent_100%)]" />
 
-      {/* Delicate botanical line-art accents */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 200 200"
-        className="pointer-events-none absolute -right-16 top-16 h-[320px] w-[320px] text-lila/[0.14] lg:h-[420px] lg:w-[420px]"
-        fill="none"
-      >
-        <path
-          d="M100 20c10 20 30 25 40 45s-5 45-40 55c-35-10-50-35-40-55s30-25 40-45Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path d="M100 70v90M70 100h60M80 130h40" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="100" cy="70" r="8" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 200 200"
-        className="pointer-events-none absolute -left-20 bottom-0 h-[280px] w-[280px] text-nude-text/[0.12] lg:h-[360px] lg:w-[360px]"
-        fill="none"
-      >
-        <path
-          d="M100 20c10 20 30 25 40 45s-5 45-40 55c-35-10-50-35-40-55s30-25 40-45Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path d="M100 70v90M70 100h60M80 130h40" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="100" cy="70" r="8" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
+      {/* Floating gold/lila dust particles */}
+      <FloatingDust count={50} />
 
       <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
         <div className="mb-14">

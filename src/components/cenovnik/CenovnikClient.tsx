@@ -57,13 +57,30 @@ export function CenovnikClient() {
               }`}
             >
               {activeTab === tab.id && (
-                <motion.span
-                  layoutId="tab-bg"
-                  className="absolute inset-0 rounded-xl bg-white shadow-[0_1px_4px_rgba(0,0,0,0.08)]"
-                  transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
-                />
+                <>
+                  <motion.span
+                    layoutId="tab-bg"
+                    className="absolute inset-0 rounded-xl bg-white shadow-[0_2px_12px_rgba(148,113,211,0.18)] ring-1 ring-lila/30"
+                    transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
+                  />
+                  <motion.span
+                    layoutId="tab-glow"
+                    className="absolute inset-0 rounded-xl"
+                    style={{ background: "radial-gradient(60% 100% at 50% 100%, rgba(148,113,211,0.18) 0%, transparent 70%)" }}
+                    transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
+                  />
+                </>
               )}
-              <span className="relative">{tab.label}</span>
+              <span className="relative flex items-center gap-1.5">
+                {activeTab === tab.id && (
+                  <motion.span
+                    className="size-1.5 rounded-full bg-lila"
+                    animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                )}
+                {tab.label}
+              </span>
             </button>
           ))}
         </motion.div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Playfair_Display, Outfit, Sacramento } from "next/font/google";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CursorTrail } from "@/components/CursorTrail";
 import "./globals.css";
@@ -17,6 +17,13 @@ const outfit = Outfit({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const sacramento = Sacramento({
+  variable: "--font-script",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="sr"
-      className={`${playfair.variable} ${outfit.variable} h-full antialiased`}
+      className={`${playfair.variable} ${outfit.variable} ${sacramento.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink overflow-x-hidden">
         <ScrollProgress />

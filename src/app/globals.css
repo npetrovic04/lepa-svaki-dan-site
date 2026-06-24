@@ -94,6 +94,14 @@
   line-height: 1.25;
 }
 
+/* Sacramento — handwritten cursive za potpis dr Tamare */
+@utility font-script {
+  font-family: var(--font-script), "Brush Script MT", cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
 @utility text-balance {
   text-wrap: balance;
 }

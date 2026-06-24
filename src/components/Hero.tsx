@@ -36,7 +36,7 @@ export function Hero() {
         aria-hidden="true"
         className="absolute pointer-events-none"
         style={{
-          right: "5%",
+          right: "0%",
           bottom: "5%",
           width: "clamp(380px, 50vw, 780px)",
           height: "clamp(380px, 50vw, 780px)",
@@ -63,8 +63,8 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-        className="absolute right-0 pointer-events-none"
-        style={{ bottom: "-10%", width: "clamp(320px, 45vw, 720px)" }}
+        className="absolute pointer-events-none"
+        style={{ right: "-5%", bottom: "-10%", width: "clamp(320px, 45vw, 720px)" }}
       >
         <Image
           src="/woman-portrait.png"

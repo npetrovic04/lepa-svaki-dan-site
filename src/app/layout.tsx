@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Outfit } from "next/font/google";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { FloatingPetals } from "@/components/FloatingPetals";
 import { CursorTrail } from "@/components/CursorTrail";
 import "./globals.css";
 
@@ -46,7 +45,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-ink overflow-x-hidden">
         <ScrollProgress />
-        <FloatingPetals count={8} />
         <CursorTrail />
         {children}
         {/* Bottom scroll blur — fixed viewport edge fade */}

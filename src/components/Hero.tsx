@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { KineticText } from "@/components/KineticText";
 import { MagneticButton } from "@/components/MagneticButton";
+import { MorphHeadline } from "@/components/MorphHeadline";
+import { FloatingPetals } from "@/components/FloatingPetals";
 
 const spring = { type: "spring" as const, bounce: 0.1, duration: 0.8 };
 const springFast = { type: "spring" as const, bounce: 0.1, duration: 0.6 };
@@ -27,6 +28,36 @@ export function Hero() {
       {/* Lila glow */}
       <div className="absolute inset-0 bg-[radial-gradient(50%_60%_at_60%_45%,rgba(148,113,211,0.10),transparent_70%)]" />
 
+      {/* Petals — confined to hero only */}
+      <FloatingPetals count={9} mode="absolute" />
+
+      {/* Gold halo behind portrait — pulses like illuminated silhouette */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          right: "5%",
+          bottom: "5%",
+          width: "clamp(380px, 50vw, 780px)",
+          height: "clamp(380px, 50vw, 780px)",
+          background:
+            "radial-gradient(closest-side, rgba(221,176,69,0.32) 0%, rgba(221,176,69,0.18) 35%, rgba(203,157,57,0.10) 55%, transparent 75%)",
+          filter: "blur(8px)",
+          mixBlendMode: "multiply",
+        }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{
+          opacity: [0.55, 0.95, 0.55],
+          scale: [0.96, 1.05, 0.96],
+        }}
+        transition={{
+          duration: 6,
+          ease: "easeInOut",
+          repeat: Infinity,
+          delay: 0.8,
+        }}
+      />
+
       {/* Woman portrait — right side, transparent bg floats over photo */}
       <motion.div
         initial={{ opacity: 0, x: 60 }}
@@ -42,38 +73,29 @@ export function Hero() {
           height={2519}
           priority
           className="w-full h-auto object-contain object-bottom block"
+          style={{ filter: "drop-shadow(0 0 28px rgba(221,176,69,0.25))" }}
         />
       </motion.div>
 
       {/* Centered content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
 
-        {/* Eyebrow */}
+        {/* Italic claim — elegant ornament */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.1 }}
-          className="mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-black/8 bg-white/70 backdrop-blur-sm px-5 py-2 text-[10px] uppercase tracking-[0.35em] text-mist"
+          className="mb-8 flex items-center gap-4 text-mist"
         >
-          <span className="size-1.5 rounded-full bg-lila animate-pulse" />
-          Beauty &amp; Wellbeing Concept · Beograd
+          <span className="h-px w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
+          <span className="font-display-italic text-[15px] md:text-[17px] tracking-wide text-ink-soft">
+            Dva koncepta — jedna filozofija
+          </span>
+          <span className="h-px w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
         </motion.div>
 
-        {/* Headline — kinetic letter-by-letter reveal, forced two lines */}
-        <h1 className="font-display text-[clamp(3.2rem,6.5vw,7rem)] font-normal text-ink leading-[1.2] whitespace-nowrap">
-          <div className="block">
-            <KineticText text="Budi lepa," by="letter" delay={0.3} stagger={0.06} />
-          </div>
-          <div className="block">
-            <KineticText
-              text="Svaki dan"
-              by="letter"
-              delay={1.1}
-              stagger={0.06}
-              className="font-display-italic text-lila"
-            />
-          </div>
-        </h1>
+        {/* Headline — morphs through a manifesto, lands on "Budi lepa, svaki dan." */}
+        <MorphHeadline />
 
         {/* Subtitle */}
         <motion.p

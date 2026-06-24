@@ -50,7 +50,14 @@ function makePetal(id: number, immediate: boolean): Petal {
   };
 }
 
-export function FloatingPetals({ count = 10 }: { count?: number }) {
+export function FloatingPetals({
+  count = 10,
+  mode = "fixed",
+}: {
+  count?: number;
+  /** "fixed" floats over the whole viewport, "absolute" stays inside its containing section */
+  mode?: "fixed" | "absolute";
+}) {
   const prefersReducedMotion = useReducedMotion();
   const [petals, setPetals] = useState<Petal[]>([]);
 
@@ -60,8 +67,13 @@ export function FloatingPetals({ count = 10 }: { count?: number }) {
 
   if (prefersReducedMotion) return null;
 
+  const positionClass = mode === "fixed" ? "fixed" : "absolute";
+
   return (
-    <div className="pointer-events-none fixed inset-0 z-[5] overflow-hidden" style={{ perspective: 1200 }}>
+    <div
+      className={`pointer-events-none ${positionClass} inset-0 z-[5] overflow-hidden`}
+      style={{ perspective: 1200 }}
+    >
       {petals.map((p) => {
         // Build a sway keyframe array — sine-wave path across the fall
         const cycles = Math.max(2, Math.floor(p.duration / p.swayPeriod));

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { signatureTreatments } from "@/lib/data";
 import { Reveal } from "@/components/Reveal";
+import { UnfoldCard } from "@/components/UnfoldCard";
 
 export function SignatureTreatments() {
   return (
@@ -43,8 +44,8 @@ export function SignatureTreatments() {
 
           <div className="flex gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide lg:overflow-x-visible lg:grid lg:grid-cols-4 lg:gap-5 lg:px-0">
             {signatureTreatments.map((t, i) => (
-              <Reveal key={t.title} delay={0.06 * (i % 4)}>
-                <article className="group flex w-[280px] flex-shrink-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)] lg:w-auto">
+              <UnfoldCard key={t.title} delay={0.12 * (i % 4)} className="w-[280px] flex-shrink-0 lg:w-auto">
+                <article className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]">
 
                   {/* Image */}
                   <div className="relative aspect-[4/5] overflow-hidden">
@@ -84,7 +85,7 @@ export function SignatureTreatments() {
                     <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-mist-light">{t.sessions}</span>
                   </div>
                 </article>
-              </Reveal>
+              </UnfoldCard>
             ))}
           </div>
         </div>

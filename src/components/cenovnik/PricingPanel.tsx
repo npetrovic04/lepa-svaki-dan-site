@@ -132,8 +132,43 @@ export function PricingPanel({ activeTab, activeFilter }: Props) {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-                      className="overflow-hidden border-t border-black/[0.06]"
+                      className="relative overflow-hidden border-t border-black/[0.06]"
                     >
+                      {/* Gold shimmer sweep — fires once when panel opens */}
+                      <motion.div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-y-0 z-10 w-1/3"
+                        style={{
+                          background:
+                            "linear-gradient(110deg, transparent 0%, rgba(255,236,180,0.55) 45%, rgba(221,176,69,0.7) 50%, rgba(255,236,180,0.55) 55%, transparent 100%)",
+                          filter: "blur(2px)",
+                          mixBlendMode: "screen",
+                        }}
+                        initial={{ x: "-120%", opacity: 0 }}
+                        animate={{ x: "320%", opacity: [0, 1, 1, 0] }}
+                        transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.05 }}
+                      />
+                      {/* Sparkle confetti — tiny gold stars puff out */}
+                      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-10">
+                        {[...Array(7)].map((_, k) => (
+                          <motion.span
+                            key={k}
+                            className="absolute top-2 block size-[3px] rounded-full"
+                            style={{
+                              left: `${10 + k * 13}%`,
+                              background: "#DDB045",
+                              boxShadow: "0 0 6px rgba(221,176,69,0.9)",
+                            }}
+                            initial={{ opacity: 0, y: 6, scale: 0.4 }}
+                            animate={{ opacity: [0, 1, 0], y: [-2, -22], scale: [0.6, 1.1, 0.5] }}
+                            transition={{
+                              duration: 0.95,
+                              delay: 0.1 + k * 0.05,
+                              ease: "easeOut",
+                            }}
+                          />
+                        ))}
+                      </div>
                       {group.services.map((svc, i) => (
                         <motion.div
                           key={i}

@@ -1,7 +1,6 @@
 import { BreathingTestimonial } from "@/components/lab/BreathingTestimonial";
 import { Reveal } from "@/components/Reveal";
 import { KineticText } from "@/components/KineticText";
-import { images } from "@/lib/data";
 
 export function ClientVoice() {
   return (
@@ -24,7 +23,7 @@ export function ClientVoice() {
         </div>
 
         <Reveal delay={0.15}>
-          <BreathingTestimonial portraitSrc={images.testimonial} />
+          <BreathingTestimonial />
         </Reveal>
       </div>
     </section>

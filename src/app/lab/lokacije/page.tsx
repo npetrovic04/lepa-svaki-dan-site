@@ -1,33 +1,34 @@
-import { BeforeAfterSlider } from "@/components/lab/BeforeAfterSlider";
-import { RitualQuiz } from "@/components/lab/RitualQuiz";
-import { SignatureReveal } from "@/components/lab/SignatureReveal";
-import { BreathingTestimonial } from "@/components/lab/BreathingTestimonial";
+import { SplitScreen } from "@/components/lab/locations/SplitScreen";
+import { TwoWindows } from "@/components/lab/locations/TwoWindows";
+import { BelgradeMap } from "@/components/lab/locations/BelgradeMap";
+import { Storyboard } from "@/components/lab/locations/Storyboard";
+import { ArmsReveal } from "@/components/lab/locations/ArmsReveal";
+import { CoinFlip } from "@/components/lab/locations/CoinFlip";
 
 const DEMOS = [
-  { id: "before-after", num: "01", title: "Before / After slider", subtitle: "Povuci središnju liniju levo-desno" },
-  { id: "ritual-quiz", num: "02", title: "Pronađi svoj ritual", subtitle: "3 pitanja → 3 preporuke" },
-  { id: "signature", num: "03", title: "Dr Tamara potpis", subtitle: "Ručno-pisan potpis u zlatnoj tinti" },
-  { id: "testimonial", num: "04", title: "Breathing testimonial", subtitle: "Portret diše, citat se kuca" },
+  { id: "split", num: "01", title: "Split-screen sa kursorom", subtitle: "Dijagonala prati miš — leva strana NB, desna BW" },
+  { id: "windows", num: "02", title: "Dva prozora — parallax", subtitle: "Kartice sa parallax fotografijom unutar 'okvira'" },
+  { id: "map", num: "03", title: "Mapa Beograda + pulsing pinovi", subtitle: "Stilizovana mapa sa rekama, hover pin za info" },
+  { id: "story", num: "04", title: "Scroll storyboard", subtitle: "4 scene koje klize horizontalno dok skroluješ" },
+  { id: "arms", num: "05", title: "Žena rukama otkriva lokacije", subtitle: "Centralni lik + dva kruga koji se 'otvaraju' levo/desno" },
+  { id: "coin", num: "06", title: "3D flip novčić", subtitle: "Jedan veliki krug — klik okreće, sa svake strane jedna lokacija" },
 ];
 
-export default function LabPage() {
+export default function LokacijePage() {
   return (
     <main className="bg-canvas">
-      {/* Top intro + nav */}
       <section className="relative px-6 pt-24 pb-12 lg:pt-28">
         <div className="mx-auto max-w-5xl">
           <div className="text-[10px] uppercase tracking-[0.32em] text-lila mb-4">
-            Lab · WOW kandidati
+            Lab · Lokacije
           </div>
           <h1 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-normal text-ink leading-[1.1] mb-5">
-            Pet predloga{" "}
-            <span className="font-display-italic text-lila">koji bi mogli</span>
-            <br />
-            da kupe klijenta na prvu.
+            Šest načina da prikažemo{" "}
+            <span className="font-display-italic text-lila">dve lokacije.</span>
           </h1>
           <p className="max-w-2xl text-[15px] text-mist font-light leading-relaxed">
-            Svaki demo je samostalna komponenta — dole pogledaj, gore u nav-u skoči
-            na onaj koji ti se sviđa. Recimo koji da implementiram u glavni sajt.
+            Svaki demo je samostalan koncept. Reci koji ti se sviđa — implementiramo
+            ga u glavni sajt umesto trenutnog Locations dela.
           </p>
 
           <nav className="mt-10 flex flex-wrap gap-2">
@@ -45,7 +46,6 @@ export default function LabPage() {
         </div>
       </section>
 
-      {/* Sections */}
       {DEMOS.map((d, i) => (
         <section
           key={d.id}
@@ -63,27 +63,19 @@ export default function LabPage() {
               </div>
             </div>
 
-            {d.id === "before-after" && (
-              <BeforeAfterSlider
-                beforeSrc="/zena1.png"
-                afterSrc="/zena2.png"
-                caption="Realne pre / posle fotografije. Povuci sredinu da uporediš."
-              />
-            )}
-
-            {d.id === "ritual-quiz" && <RitualQuiz />}
-
-            {d.id === "signature" && <SignatureReveal />}
-
-            {d.id === "testimonial" && <BreathingTestimonial />}
+            {d.id === "split" && <SplitScreen />}
+            {d.id === "windows" && <TwoWindows />}
+            {d.id === "map" && <BelgradeMap />}
+            {d.id === "story" && <Storyboard />}
+            {d.id === "arms" && <ArmsReveal />}
+            {d.id === "coin" && <CoinFlip />}
           </div>
         </section>
       ))}
 
-      {/* Footer prompt */}
       <section className="px-6 py-20 text-center">
         <p className="font-display text-[1.5rem] text-ink-soft">
-          Reci mi koji <span className="font-display-italic text-lila">žele da ostanu</span> →
+          Koji da <span className="font-display-italic text-lila">postane</span> sekcija "Lokacije" →
         </p>
       </section>
     </main>

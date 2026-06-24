@@ -55,10 +55,11 @@ export function BeforeAfterSlider({
   }, [setFromClientX]);
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="mx-auto w-full max-w-[520px]">
       <div
         ref={containerRef}
-        className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-canvas shadow-[0_8px_40px_rgba(0,0,0,0.08)] select-none cursor-ew-resize"
+        className="relative aspect-square overflow-hidden rounded-2xl bg-canvas shadow-[0_8px_40px_rgba(0,0,0,0.08)] select-none cursor-ew-resize"
+        style={{ maxHeight: "min(70vh, 600px)" }}
         onPointerDown={(e) => {
           draggingRef.current = true;
           document.body.style.userSelect = "none";

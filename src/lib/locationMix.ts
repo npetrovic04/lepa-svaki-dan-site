@@ -5,7 +5,7 @@ import { Service, Location } from "./cenovnik";
  * the cenovnik doesn't look like every row is offered on every location.
  * Services explicitly tagged "nb" or "bw" pass through unchanged.
  *
- * Distribution roughly: 38% nb, 38% bw, 24% both — driven by a string hash
+ * Distribution roughly: 28% nb, 28% bw, 44% both — driven by a string hash
  * over the service name so the assignment is stable across renders.
  */
 
@@ -33,7 +33,7 @@ export function resolveLocation(service: Service): Location {
   }
 
   const bucket = hash(service.name) % 100;
-  if (bucket < 38) return "nb";
-  if (bucket < 76) return "bw";
+  if (bucket < 28) return "nb";
+  if (bucket < 56) return "bw";
   return "both";
 }

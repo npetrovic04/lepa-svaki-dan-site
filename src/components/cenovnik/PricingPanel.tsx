@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ServiceRow } from "./ServiceRow";
 import { LaserTable } from "./LaserTable";
 import { pricingTabs } from "@/lib/cenovnik";
+import { resolveLocation } from "@/lib/locationMix";
 
 type FilterType = "all" | "nb" | "bw";
 
@@ -43,18 +44,19 @@ export function PricingPanel({ activeTab, activeFilter }: Props) {
 
   if (!tab) return null;
 
-  // Filter services by location
-  function filterService(loc: string) {
+  // Filter services by *effective* (resolved) location so the location-mix
+  // helper drives the NB/BWF toggles, not just the raw data.
+  function filterService(svcLoc: string) {
     if (activeFilter === "all") return true;
-    if (activeFilter === "nb") return loc === "nb" || loc === "both";
-    if (activeFilter === "bw") return loc === "bw" || loc === "both";
+    if (activeFilter === "nb") return svcLoc === "nb" || svcLoc === "both";
+    if (activeFilter === "bw") return svcLoc === "bw" || svcLoc === "both";
     return true;
   }
 
   const filteredGroups = tab.groups
     .map((group) => ({
       ...group,
-      services: group.services.filter((s) => filterService(s.location)),
+      services: group.services.filter((s) => filterService(resolveLocation(s))),
     }))
     .filter((g) => g.services.length > 0);
 

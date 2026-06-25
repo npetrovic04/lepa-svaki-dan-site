@@ -1,7 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { AboutUs } from "@/components/AboutUs";
-import { LocationsReveal } from "@/components/LocationsReveal";
+import { LocationsShowcase } from "@/components/LocationsShowcase";
 import { ServicesSection } from "@/components/ServicesSection";
 import { Verticals } from "@/components/Verticals";
 import { RitualFinder } from "@/components/RitualFinder";
@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <AboutUs />
-        <LocationsReveal />
+        <LocationsShowcase />
         <ServicesSection />
         <RitualFinder />
         <Verticals />

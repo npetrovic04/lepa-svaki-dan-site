@@ -25,21 +25,21 @@ const DEFAULT_TESTIMONIALS: Testimonial[] = [
       "Probala sam mnoge tretmane, ali ovde se prvi put osećam kao da neko stvarno gleda moju kožu. Profhilo paket mi je u potpunosti vratio sjaj.",
     author: "Marija K.",
     tag: "Klijent · 3 godine",
-    portraitSrc: "/zena2.png",
+    portraitSrc: "/zena2.jpg",
   },
   {
     quote:
       "Najviše me osvojio profesionalizam. Bez prodaje, bez pritiska — samo iskreni saveti i tretmani koji rade. Otkad sam tu, ne idem nigde drugde.",
     author: "Ana T.",
     tag: "Klijent · 1 godina",
-    portraitSrc: "/zena1.png",
+    portraitSrc: "/zena1.jpg",
   },
   {
     quote:
       "Stalno mi prijateljice pitaju gde idem na tretmane. Wellbeing Concept na Waterfront-u mi je oaza nakon posla — i koža i glava se odmore.",
     author: "Mirjana V.",
     tag: "Klijent · 6 meseci",
-    portraitSrc: "/lumiera-assets/portrait.png",
+    portraitSrc: "/lumiera-assets/portrait-small.jpg",
   },
 ];
 
@@ -157,34 +157,17 @@ export function BreathingTestimonial({
         {/* Breathing portrait — re-mounts on slide change so avatar fades in */}
         <div className="relative mx-auto h-56 w-56 lg:h-60 lg:w-60">
           {!prefersReducedMotion && (
-            <>
-              {[0, 1].map((k) => (
-                <motion.span
-                  key={k}
-                  aria-hidden="true"
-                  className="absolute inset-0 rounded-full border border-champagne/60"
-                  initial={{ scale: 1, opacity: 0.5 }}
-                  animate={{ scale: [1, 1.45], opacity: [0.45, 0] }}
-                  transition={{
-                    duration: BREATH * 1.4,
-                    ease: "easeOut",
-                    repeat: Infinity,
-                    delay: k * (BREATH * 0.7),
-                  }}
-                />
-              ))}
-              <motion.span
-                aria-hidden="true"
-                className="absolute -inset-3 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(closest-side, rgba(221,176,69,0.55), rgba(148,113,211,0.28) 55%, transparent 80%)",
-                  filter: "blur(10px)",
-                }}
-                animate={{ scale: [1, 1.12, 1], opacity: [0.55, 1, 0.55] }}
-                transition={{ duration: BREATH, ease: "easeInOut", repeat: Infinity }}
-              />
-            </>
+            <motion.span
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full border border-champagne/60"
+              initial={{ scale: 1, opacity: 0.5 }}
+              animate={{ scale: [1, 1.35], opacity: [0.45, 0] }}
+              transition={{
+                duration: BREATH * 1.4,
+                ease: "easeOut",
+                repeat: Infinity,
+              }}
+            />
           )}
 
           <AnimatePresence mode="wait">

@@ -72,7 +72,6 @@ export function FloatingPetals({
   return (
     <div
       className={`pointer-events-none ${positionClass} inset-0 z-[5] overflow-hidden`}
-      style={{ perspective: 1200 }}
     >
       {petals.map((p) => {
         // Build a sway keyframe array — sine-wave path across the fall
@@ -81,8 +80,6 @@ export function FloatingPetals({
           const phase = (i % 2 === 0 ? 0 : (i % 4 === 1 ? 1 : -1));
           return `${p.swayAmp * phase}vw`;
         });
-        // Build flip keyframes (3D rotation around Y) — like a leaf catching air
-        const flipKeys = Array.from({ length: Math.floor(p.duration / p.flipSpeed) + 1 }, (_, i) => i * 180);
 
         return (
           <motion.div
@@ -95,26 +92,23 @@ export function FloatingPetals({
               height: p.width * 1.4,
               opacity: p.opacity,
               willChange: "transform",
-              transformStyle: "preserve-3d",
             }}
-            initial={{ y: 0, x: 0, rotate: p.rotateStart, rotateY: 0 }}
+            initial={{ y: 0, x: 0, rotate: p.rotateStart }}
             animate={{
               y: ["0vh", "115vh"],
               x: swayKeys,
               rotate: [p.rotateStart, p.rotateStart + p.spinSpeed],
-              rotateY: flipKeys,
             }}
             transition={{
               y: { duration: p.duration, ease: "linear", repeat: Infinity, delay: p.delay },
               x: { duration: p.duration, ease: "easeInOut", repeat: Infinity, delay: p.delay },
               rotate: { duration: p.duration, ease: "linear", repeat: Infinity, delay: p.delay },
-              rotateY: { duration: p.duration, ease: "easeInOut", repeat: Infinity, delay: p.delay },
             }}
           >
             <svg
               viewBox="0 0 100 140"
               className="h-full w-full"
-              style={{ transform: p.flipped ? "scaleX(-1)" : undefined, filter: "drop-shadow(0 3px 6px rgba(148,113,211,0.18))" }}
+              style={{ transform: p.flipped ? "scaleX(-1)" : undefined }}
             >
               <defs>
                 <radialGradient id={`petal-grad-${p.id}`} cx="50%" cy="20%" r="80%">

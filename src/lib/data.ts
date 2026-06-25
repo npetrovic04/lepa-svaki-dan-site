@@ -10,7 +10,7 @@ export const images = {
   ctaBg: "/lumiera-assets/cta-bg.png",
 
   // Portret (2000px visina) — za Manifest sekciju
-  portraitDr: "/lumiera-assets/portrait.png",
+  portraitDr: "/lumiera-assets/portrait-small.jpg",
 
   // Tretmani — horizontalni carousel
   treatmentProfhilo:  "/lumiera-assets/UERW22sh1kIYLi7iLSLwZnqeI.jpg",

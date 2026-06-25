@@ -65,8 +65,8 @@ export default function LabPage() {
 
             {d.id === "before-after" && (
               <BeforeAfterSlider
-                beforeSrc="/zena1.png"
-                afterSrc="/zena2.png"
+                beforeSrc="/zena1.jpg"
+                afterSrc="/zena2.jpg"
                 caption="Realne pre / posle fotografije. Povuci sredinu da uporediš."
               />
             )}

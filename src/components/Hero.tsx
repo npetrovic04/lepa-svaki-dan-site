@@ -15,10 +15,11 @@ export function Hero() {
 
       {/* Orchid background photo */}
       <Image
-        src="/hero-orhideja.png"
+        src="/hero-orhideja.jpg"
         alt=""
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -29,27 +30,20 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(50%_60%_at_60%_45%,rgba(148,113,211,0.10),transparent_70%)]" />
 
       {/* Petals — confined to hero only */}
-      <FloatingPetals count={9} mode="absolute" />
+      <FloatingPetals count={5} mode="absolute" />
 
-      {/* Gold halo behind portrait — pulses like illuminated silhouette */}
+      {/* Gold halo behind portrait — gentle opacity pulse (no blur/blend) */}
       <motion.div
         aria-hidden="true"
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none right-0 bottom-[5%]"
         style={{
-          right: "0%",
-          bottom: "5%",
           width: "clamp(380px, 50vw, 780px)",
           height: "clamp(380px, 50vw, 780px)",
           background:
-            "radial-gradient(closest-side, rgba(221,176,69,0.32) 0%, rgba(221,176,69,0.18) 35%, rgba(203,157,57,0.10) 55%, transparent 75%)",
-          filter: "blur(8px)",
-          mixBlendMode: "multiply",
+            "radial-gradient(closest-side, rgba(221,176,69,0.28) 0%, rgba(221,176,69,0.12) 40%, transparent 75%)",
         }}
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{
-          opacity: [0.55, 0.95, 0.55],
-          scale: [0.96, 1.05, 0.96],
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.55, 0.9, 0.55] }}
         transition={{
           duration: 6,
           ease: "easeInOut",

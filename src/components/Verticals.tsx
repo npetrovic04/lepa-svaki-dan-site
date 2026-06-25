@@ -21,7 +21,7 @@ export function Verticals() {
       {/* Orchid bouquet — visible right edge */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-[8%] top-0 h-full w-[50vw] max-w-[680px] scale-x-[-1]">
         <div className="relative h-full w-full">
-          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="50vw" />
+          <Image src="/hero-orhideja.jpg" alt="" fill className="object-cover object-left" sizes="50vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
           <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
         </div>

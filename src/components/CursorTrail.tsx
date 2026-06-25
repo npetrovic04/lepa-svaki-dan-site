@@ -76,8 +76,8 @@ export function CursorTrail() {
       const dy = y - lastY;
       const dist = Math.hypot(dx, dy);
       const now = performance.now();
-      if (dist > 4 && now - lastSpawn > 14) {
-        spawnSparkle(x, y, Math.min(2, Math.ceil(dist / 28)));
+      if (dist > 6 && now - lastSpawn > 32) {
+        spawnSparkle(x, y, 1);
         lastSpawn = now;
       }
       lastX = x;

@@ -9,7 +9,7 @@ export function ServicesSection() {
       {/* Large orchid bouquet — visible left edge */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-[10%] top-0 h-full w-[55vw] max-w-[760px]">
         <div className="relative h-full w-full">
-          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="55vw" />
+          <Image src="/hero-orhideja.jpg" alt="" fill className="object-cover object-left" sizes="55vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
           <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
         </div>
@@ -18,7 +18,7 @@ export function ServicesSection() {
       {/* Mirror orchid — visible right edge */}
       <div aria-hidden="true" className="pointer-events-none absolute -right-[10%] bottom-0 h-full w-[45vw] max-w-[640px] scale-x-[-1]">
         <div className="relative h-full w-full">
-          <Image src="/hero-orhideja.png" alt="" fill className="object-cover object-left" sizes="45vw" />
+          <Image src="/hero-orhideja.jpg" alt="" fill className="object-cover object-left" sizes="45vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-canvas/35 to-canvas" />
           <div className="absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas/40" />
         </div>

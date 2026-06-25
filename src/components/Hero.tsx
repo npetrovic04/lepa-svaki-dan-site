@@ -63,8 +63,8 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-        className="absolute pointer-events-none"
-        style={{ right: "-5%", bottom: "-10%", width: "clamp(320px, 45vw, 720px)" }}
+        className="absolute pointer-events-none right-0 bottom-[-12%] w-[clamp(240px,55vw,720px)] lg:bottom-[-10%] lg:w-[clamp(320px,45vw,720px)]"
+        style={{ right: "-5%" }}
       >
         <Image
           src="/woman-portrait.png"
@@ -85,13 +85,13 @@ export function Hero() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.1 }}
-          className="mb-8 flex items-center gap-4 text-mist"
+          className="mb-6 lg:mb-8 flex items-center gap-2 sm:gap-4 text-mist"
         >
-          <span className="h-px w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
-          <span className="font-display-italic text-[15px] md:text-[17px] tracking-wide text-ink-soft">
+          <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
+          <span className="font-display-italic text-[13px] sm:text-[15px] md:text-[17px] tracking-wide text-ink-soft text-center">
             Dva koncepta — jedna filozofija
           </span>
-          <span className="h-px w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
+          <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
         </motion.div>
 
         {/* Headline — morphs through a manifesto, lands on "Budi lepa, svaki dan." */}
@@ -138,19 +138,19 @@ export function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...springFast, delay: 0.8 }}
-        className="absolute bottom-0 left-0 right-0 z-10 flex flex-wrap items-center justify-between gap-4 border-t border-black/6 bg-white/70 px-8 py-4 backdrop-blur-sm lg:px-14"
+        className="absolute bottom-0 left-0 right-0 z-10 flex flex-wrap items-center justify-between gap-3 lg:gap-4 border-t border-black/6 bg-white/75 px-4 py-3 backdrop-blur-sm sm:px-8 sm:py-4 lg:px-14"
       >
-        <div className="flex flex-wrap gap-8">
+        <div className="flex flex-wrap gap-4 sm:gap-8">
           <div>
-            <div className="text-[9px] uppercase tracking-[0.3em] text-mist-light mb-1">Lokacija 1</div>
-            <div className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-soft">Novi Beograd · Beauty Concept</div>
+            <div className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] sm:tracking-[0.3em] text-mist-light mb-0.5 sm:mb-1">Lokacija 1</div>
+            <div className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em] sm:tracking-[0.2em] text-ink-soft">Novi Beograd</div>
           </div>
           <div>
-            <div className="text-[9px] uppercase tracking-[0.3em] text-mist-light mb-1">Lokacija 2</div>
-            <div className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-soft">Belgrade Waterfront · Wellbeing</div>
+            <div className="text-[8px] sm:text-[9px] uppercase tracking-[0.28em] sm:tracking-[0.3em] text-mist-light mb-0.5 sm:mb-1">Lokacija 2</div>
+            <div className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em] sm:tracking-[0.2em] text-ink-soft">Belgrade Waterfront</div>
           </div>
         </div>
-        <div className="text-[10px] uppercase tracking-[0.25em] text-mist-light">Pon — Sub · 9—21h</div>
+        <div className="hidden sm:block text-[10px] uppercase tracking-[0.25em] text-mist-light">Pon — Sub · 9—21h</div>
       </motion.div>
     </section>
   );

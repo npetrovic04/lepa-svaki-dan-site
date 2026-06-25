@@ -3,20 +3,22 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-type Phase = {
-  primary: string;
-  italic: string;
-  /** ms to hold this phrase on screen */
-  hold: number;
-};
+/**
+ * Hero headline animation:
+ *   • "Budi" animates in once on mount, then stays fixed forever.
+ *   • Italic second line cycles through a manifesto sequence,
+ *     resets to the first phrase after holding the final one.
+ */
 
-const SEQUENCE: Phase[] = [
-  { primary: "Budi", italic: "smirena.", hold: 1700 },
-  { primary: "Budi", italic: "ti.", hold: 1700 },
-  { primary: "Budi lepa,", italic: "svaki dan.", hold: 3000 },
+type Phrase = { text: string; hold: number };
+
+const PHRASES: Phrase[] = [
+  { text: "smirena.", hold: 1700 },
+  { text: "ti.", hold: 1700 },
+  { text: "lepa, svaki dan.", hold: 2800 },
 ];
 
-const LETTER_STAGGER = 0.09; // slower than before (was implicit ~0.05)
+const LETTER_STAGGER = 0.09;
 
 const lineVariants = {
   hidden: { transition: { staggerChildren: 0.02, staggerDirection: -1 } },
@@ -61,7 +63,6 @@ function Letters({ text, className }: { text: string; className?: string }) {
 }
 
 function phraseDuration(text: string) {
-  // Time it takes for the letter stagger to complete the full word.
   return text.length * LETTER_STAGGER * 1000 + 300;
 }
 
@@ -71,40 +72,42 @@ export function MorphHeadline() {
 
   useEffect(() => {
     if (prefersReducedMotion) {
-      setIdx(SEQUENCE.length - 1);
+      setIdx(PHRASES.length - 1);
       return;
     }
-    const phase = SEQUENCE[idx];
-    // Hold begins only after the longest line has finished drawing in.
-    const enterTime = Math.max(
-      phraseDuration(phase.primary),
-      phraseDuration(phase.italic)
-    );
-    const t = setTimeout(
-      () => setIdx((i) => (i + 1) % SEQUENCE.length),
-      enterTime + phase.hold
-    );
+    const phrase = PHRASES[idx];
+    const enterTime = phraseDuration(phrase.text);
+    const t = setTimeout(() => {
+      setIdx((i) => (i + 1) % PHRASES.length);
+    }, enterTime + phrase.hold);
     return () => clearTimeout(t);
   }, [idx, prefersReducedMotion]);
 
-  const phase = SEQUENCE[idx];
+  const phrase = PHRASES[idx];
 
   return (
-    <h1 className="font-display text-[clamp(3.2rem,6.5vw,7rem)] font-normal text-ink leading-[1.2] whitespace-nowrap text-center">
+    <h1 className="font-display text-[clamp(2.4rem,7vw,7rem)] font-normal text-ink leading-[1.2] text-center px-4">
+      <span className="block whitespace-nowrap">
+      {/* Row 1 — "Budi" animates ONCE on mount, then stays fixed */}
       <div className="block min-h-[1.2em]">
-        <AnimatePresence mode="wait">
-          <Letters key={`p-${idx}`} text={phase.primary} />
-        </AnimatePresence>
+        {prefersReducedMotion ? (
+          <span>Budi</span>
+        ) : (
+          <Letters text="Budi" />
+        )}
       </div>
+
+      {/* Row 2 — italic phrase cycles */}
       <div className="block min-h-[1.2em]">
         <AnimatePresence mode="wait">
           <Letters
             key={`i-${idx}`}
-            text={phase.italic}
+            text={phrase.text}
             className="font-display-italic text-lila"
           />
         </AnimatePresence>
       </div>
+      </span>
     </h1>
   );
 }

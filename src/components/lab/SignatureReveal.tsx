@@ -56,8 +56,9 @@ function Row({
           color: "transparent",
           filter: "drop-shadow(0 1px 0 rgba(139,107,61,0.18))",
           fontSize: "clamp(2.8rem, 5.6vw, 4.2rem)",
-          lineHeight: 0.95,
+          lineHeight: 1.15, // give ascenders (D, k, l, b) breathing room
           letterSpacing: "0.005em",
+          paddingTop: "0.12em",  // top room for D, k, l, b
           paddingBottom: "0.18em", // descender room (j, ć)
         }}
         {...inkReveal}

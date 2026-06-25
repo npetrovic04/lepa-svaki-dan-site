@@ -32,18 +32,20 @@ const DEFAULT_TESTIMONIALS: Testimonial[] = [
       "Najviše me osvojio profesionalizam. Bez prodaje, bez pritiska — samo iskreni saveti i tretmani koji rade. Otkad sam tu, ne idem nigde drugde.",
     author: "Ana T.",
     tag: "Klijent · 1 godina",
+    portraitSrc: "/lumiera-assets/2uloSuUw3QU91Cbm9vPpMvrFO8.jpg",
   },
   {
     quote:
       "Stalno mi prijateljice pitaju gde idem na tretmane. Wellbeing Concept na Waterfront-u mi je oaza nakon posla — i koža i glava se odmore.",
     author: "Mirjana V.",
     tag: "Klijent · 6 meseci",
+    portraitSrc: "/lumiera-assets/6A4hwz0YtJyXUrK6Q18S0t4sHU.jpg",
   },
 ];
 
 const BREATH = 4.2;
-const AUTO_ROTATE_MS = 9000;
-const TYPE_SPEED_MS = 24;
+const AUTO_ROTATE_MS = 5000;
+const TYPE_SPEED_MS = 18;
 
 function initials(name: string) {
   return name

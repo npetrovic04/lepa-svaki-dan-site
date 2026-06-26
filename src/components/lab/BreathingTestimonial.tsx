@@ -25,21 +25,21 @@ const DEFAULT_TESTIMONIALS: Testimonial[] = [
       "Probala sam mnoge tretmane, ali ovde se prvi put osećam kao da neko stvarno gleda moju kožu. Profhilo paket mi je u potpunosti vratio sjaj.",
     author: "Marija K.",
     tag: "Klijent · 3 godine",
-    portraitSrc: "/zena2.jpg",
+    portraitSrc: "/woman-portrait.png",
   },
   {
     quote:
       "Najviše me osvojio profesionalizam. Bez prodaje, bez pritiska — samo iskreni saveti i tretmani koji rade. Otkad sam tu, ne idem nigde drugde.",
     author: "Ana T.",
     tag: "Klijent · 1 godina",
-    portraitSrc: "/zena1.jpg",
+    portraitSrc: "/woman-portrait.png",
   },
   {
     quote:
       "Stalno mi prijateljice pitaju gde idem na tretmane. Wellbeing Concept na Waterfront-u mi je oaza nakon posla — i koža i glava se odmore.",
     author: "Mirjana V.",
     tag: "Klijent · 6 meseci",
-    portraitSrc: "/lumiera-assets/portrait-small.jpg",
+    portraitSrc: "/woman-portrait.png",
   },
 ];
 

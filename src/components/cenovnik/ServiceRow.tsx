@@ -5,21 +5,21 @@ function LocationPill({ kind }: { kind: "nb" | "bw" }) {
   if (kind === "nb") {
     return (
       <span
-        className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_1px_4px_rgba(203,157,57,0.35)]"
+        className="inline-flex items-center rounded-full px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_1px_4px_rgba(203,157,57,0.35)] whitespace-nowrap"
         style={{ background: "linear-gradient(135deg, #DDB045 0%, #CB9D39 60%, #B58724 100%)" }}
-        title="Novi Beograd · Beauty Concept"
+        title="Beauty Concept · Novi Beograd"
       >
-        NB
+        Novi Beograd
       </span>
     );
   }
   return (
     <span
-      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_1px_4px_rgba(148,113,211,0.35)]"
+      className="inline-flex items-center rounded-full px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_1px_4px_rgba(148,113,211,0.35)] whitespace-nowrap"
       style={{ background: "linear-gradient(135deg, #C5B4E3 0%, #9471D3 60%, #7757B8 100%)" }}
-      title="Belgrade Waterfront · Wellbeing Concept"
+      title="Wellbeing Concept · Beograd na vodi"
     >
-      BW
+      Beograd na vodi
     </span>
   );
 }

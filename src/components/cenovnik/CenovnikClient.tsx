@@ -27,21 +27,21 @@ export function CenovnikClient() {
         <span className="text-mist uppercase tracking-[0.22em] mr-1">Lokacije:</span>
         <span className="inline-flex items-center gap-2">
           <span
-            className="inline-block rounded-full px-3 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
+            className="inline-block rounded-full px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white whitespace-nowrap"
             style={{ background: "linear-gradient(135deg, #DDB045 0%, #CB9D39 100%)" }}
           >
-            NB
+            Novi Beograd
           </span>
-          <span className="text-ink-soft">Novi Beograd · Beauty</span>
+          <span className="text-ink-soft">Beauty Concept</span>
         </span>
         <span className="inline-flex items-center gap-2">
           <span
-            className="inline-block rounded-full px-3 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
+            className="inline-block rounded-full px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white whitespace-nowrap"
             style={{ background: "linear-gradient(135deg, #C5B4E3 0%, #9471D3 100%)" }}
           >
-            BW
+            Beograd na vodi
           </span>
-          <span className="text-ink-soft">Belgrade Waterfront · Wellbeing</span>
+          <span className="text-ink-soft">Wellbeing Concept</span>
         </span>
       </motion.div>
 

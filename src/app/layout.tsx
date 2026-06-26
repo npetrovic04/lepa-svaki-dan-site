@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Outfit, Sacramento } from "next/font/google";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CursorTrail } from "@/components/CursorTrail";
+import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -54,6 +55,7 @@ export default function RootLayout({
         <ScrollProgress />
         <CursorTrail />
         {children}
+        <BackToTop />
         {/* Bottom scroll blur — fixed viewport edge fade */}
         <div
           aria-hidden="true"

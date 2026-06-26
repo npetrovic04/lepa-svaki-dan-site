@@ -13,8 +13,8 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 type Phrase = { text: string; hold: number };
 
 const PHRASES: Phrase[] = [
-  { text: "srećna.", hold: 1800 },
   { text: "smirena.", hold: 1800 },
+  { text: "srećna.", hold: 1800 },
   { text: "lepa svaki dan.", hold: 2800 },
 ];
 

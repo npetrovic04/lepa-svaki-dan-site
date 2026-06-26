@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
@@ -71,7 +70,19 @@ function gradientFor(name: string) {
 
 function Avatar({ t }: { t: Testimonial }) {
   if (t.portraitSrc) {
-    return <Image src={t.portraitSrc} alt={t.author} fill sizes="240px" className="object-cover" />;
+    return (
+      <div
+        role="img"
+        aria-label={t.author}
+        className="h-full w-full"
+        style={{
+          backgroundImage: `url(${t.portraitSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+    );
   }
   return (
     <div

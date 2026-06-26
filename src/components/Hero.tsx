@@ -57,8 +57,8 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-        className="absolute pointer-events-none bottom-[8%] w-[clamp(220px,52vw,560px)] sm:bottom-[2%] lg:bottom-[-8%] lg:w-[clamp(280px,38vw,640px)]"
-        style={{ right: "-9%" }}
+        className="absolute pointer-events-none bottom-[6%] w-[clamp(250px,56vw,620px)] sm:bottom-[0%] lg:bottom-[-9%] lg:w-[clamp(320px,42vw,700px)]"
+        style={{ right: "-8%" }}
       >
         <Image
           src="/woman-portrait.png"

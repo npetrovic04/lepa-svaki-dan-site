@@ -13,9 +13,9 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 type Phrase = { text: string; hold: number };
 
 const PHRASES: Phrase[] = [
-  { text: "smirena.", hold: 1700 },
-  { text: "ti.", hold: 1700 },
-  { text: "lepa, svaki dan.", hold: 2800 },
+  { text: "srećna.", hold: 1800 },
+  { text: "smirena.", hold: 1800 },
+  { text: "lepa svaki dan.", hold: 2800 },
 ];
 
 const LETTER_STAGGER = 0.09;
